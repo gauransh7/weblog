@@ -31,7 +31,7 @@ session_start();
 			</ol>
 			<div class="carousel-inner" role="listbox">
                             <?php 
-                            $query = "select * from blog";  
+                            $query = "select * from blog order by views asc";  
                             $select_data = mysqli_query($conn, $query);                          
                             $count = 0;
                             while ($row = mysqli_fetch_array($select_data)){

@@ -149,7 +149,7 @@ if(isset($_GET['id'])){
                                             <center><h4>Comments</h4></center>
                                     <?php 
                                     $cid = $_GET['id'];
-                                    $query ="SELECT blog.blog_title , blog.blog_subtitle ,blog.comments , comment.cmnt_des , blog.thumbnail , blog.content , blog.created , blog.status , blog.status_remark , blog.created , user_details.user_id , user_details.name , category.cate_id , category.cate_name , blog.blog_id , blog.blog_title FROM user_details , comment , category , blog WHERE comment.blog_id = blog.blog_id and user_details.user_id = blog.user_id and category.cate_id = blog.cate_id and blog.blog_id = '$cid' LIMIT 2";
+                                    $query ="SELECT blog.blog_title , blog.blog_subtitle ,blog.comments , comment.cmnt_des ,comment.user_id , blog.thumbnail , blog.content , blog.created , blog.status , blog.status_remark , blog.created , user_details.name ,user_details.user_id , category.cate_id , category.cate_name , blog.blog_id , blog.blog_title FROM user_details , comment , category , blog WHERE comment.blog_id = blog.blog_id and user_details.user_id = comment.user_id and category.cate_id = blog.cate_id and blog.blog_id = '$cid'  ORDER BY cmnt_created DESC LIMIT 2";
                                     $select_data = mysqli_query($conn, $query);
                                    
                                     

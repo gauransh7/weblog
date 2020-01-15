@@ -1,5 +1,6 @@
 <?php 
 include './include/db.php';
+session_start();
 ?><!DOCTYPE html>
 <html lang="zxx">
 
